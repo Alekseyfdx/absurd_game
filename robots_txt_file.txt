@@ -1,0 +1,488 @@
+# Robots.txt для Абсурдная Игра
+# Обновлено: 22 августа 2025
+# URL: https://absudia.com/robots.txt
+
+# ================================================
+# ОСНОВНЫЕ ПРАВИЛА ДЛЯ ВСЕХ РОБОТОВ
+# ================================================
+
+User-agent: *
+Allow: /
+
+# Разрешённые для индексации страницы
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy.html
+Allow: /terms.html
+
+# Разрешённые статические ресурсы
+Allow: /styles.css
+Allow: /script.js
+Allow: /manifest.json
+Allow: /phrases.json
+
+# Разрешённые директории
+Allow: /assets/
+Allow: /assets/icons/
+Allow: /assets/images/
+Allow: /assets/screenshots/
+
+# ================================================
+# ЗАПРЕЩЁННЫЕ ДЛЯ ИНДЕКСАЦИИ
+# ================================================
+
+# Временные и служебные файлы
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /.well-known/
+Disallow: /api/
+Disallow: /admin/
+
+# Файлы разработки
+Disallow: /dev/
+Disallow: /test/
+Disallow: /debug/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Личные данные пользователей (если будут)
+Disallow: /user/
+Disallow: /profile/
+Disallow: /settings/
+
+# Динамические URL с параметрами (опционально)
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /*?*fbclid=*
+
+# Дубли страниц с параметрами
+Disallow: /*?category=*
+Disallow: /*?theme=*
+Disallow: /*?lang=*
+
+# ================================================
+# СПЕЦИАЛЬНЫЕ ПРАВИЛА ДЛЯ РАЗНЫХ БОТОВ
+# ================================================
+
+# Google Bot - основной индексатор Google
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Crawl-delay: 1
+
+# Google Bot для изображений
+User-agent: Googlebot-Image
+Allow: /assets/icons/
+Allow: /assets/images/
+Allow: /assets/screenshots/
+Disallow: /api/
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Crawl-delay: 2
+
+# Yandex Bot (популярен в России)
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+Crawl-delay: 2
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+
+# Facebook Bot (для Open Graph)
+User-agent: facebookexternalhit
+Allow: /
+Allow: /assets/og-*
+Allow: /assets/icons/
+
+# Twitter Bot
+User-agent: Twitterbot
+Allow: /
+Allow: /assets/twitter-*
+Allow: /assets/icons/
+
+# ================================================
+# ОГРАНИЧЕНИЯ ДЛЯ АГРЕССИВНЫХ БОТОВ
+# ================================================
+
+# Слишком агрессивные краулеры
+User-agent: AhrefsBot
+Crawl-delay: 10
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
+Disallow: /
+
+User-agent: MJ12bot
+Crawl-delay: 10
+Disallow: /
+
+User-agent: DotBot
+Crawl-delay: 10
+Disallow: /
+
+# Боты, которые часто перегружают серверы
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Crawl-delay: 30
+
+# ================================================
+# СПЕЦИАЛИЗИРОВАННЫЕ БОТЫ
+# ================================================
+
+# Apple Bot (для Siri и Spotlight)
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+Allow: /about.html
+Allow: /contact.html
+
+# Telegram Bot (для превью ссылок)
+User-agent: TelegramBot
+Allow: /
+Allow: /assets/icons/
+Allow: /assets/og-*
+
+# WhatsApp Bot
+User-agent: WhatsApp
+Allow: /
+Allow: /assets/icons/
+Allow: /assets/og-*
+
+# ================================================
+# БОТЫ БЕЗОПАСНОСТИ И МОНИТОРИНГА
+# ================================================
+
+# SecurityScanner - разрешаем сканирование безопасности
+User-agent: SecurityScanner
+Allow: /
+Crawl-delay: 5
+
+# Lighthouse и PageSpeed Insights
+User-agent: Lighthouse
+Allow: /
+
+User-agent: Chrome-Lighthouse
+Allow: /
+
+# ================================================
+# ПЛОХИЕ БОТЫ (ПОЛНАЯ БЛОКИРОВКА)
+# ================================================
+
+# Спам-боты и скраперы
+User-agent: SiteSnagger
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: psbot
+Disallow: /
+
+User-agent: MSIECrawler
+Disallow: /
+
+User-agent: NetAnts
+Disallow: /
+
+User-agent: asterias
+Disallow: /
+
+User-agent: BackDoorBot
+Disallow: /
+
+User-agent: Black Widow
+Disallow: /
+
+User-agent: BuiltBotTough
+Disallow: /
+
+User-agent: Bullseye
+Disallow: /
+
+User-agent: CheeseBot
+Disallow: /
+
+User-agent: CherryPicker
+Disallow: /
+
+User-agent: CopyRightCheck
+Disallow: /
+
+User-agent: cosmos
+Disallow: /
+
+User-agent: Crescent
+Disallow: /
+
+User-agent: Curl
+Disallow: /
+
+User-agent: DISCo
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: Express WebPictures
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+User-agent: EyeNetIE
+Disallow: /
+
+User-agent: FlashGet
+Disallow: /
+
+User-agent: GetRight
+Disallow: /
+
+User-agent: GetWeb!
+Disallow: /
+
+User-agent: Go!Zilla
+Disallow: /
+
+User-agent: Go-Ahead-Got-It
+Disallow: /
+
+User-agent: GrabNet
+Disallow: /
+
+User-agent: Grafula
+Disallow: /
+
+User-agent: HMView
+Disallow: /
+
+User-agent: Image Stripper
+Disallow: /
+
+User-agent: Image Sucker
+Disallow: /
+
+User-agent: Indy Library
+Disallow: /
+
+User-agent: InterGET
+Disallow: /
+
+User-agent: Internet Ninja
+Disallow: /
+
+User-agent: JetCar
+Disallow: /
+
+User-agent: JOC Web Spider
+Disallow: /
+
+User-agent: larbin
+Disallow: /
+
+User-agent: LeechFTP
+Disallow: /
+
+User-agent: Mass Downloader
+Disallow: /
+
+User-agent: MIDown tool
+Disallow: /
+
+User-agent: Mister PiX
+Disallow: /
+
+User-agent: Navroad
+Disallow: /
+
+User-agent: NearSite
+Disallow: /
+
+User-agent: NetAnts
+Disallow: /
+
+User-agent: NetSpider
+Disallow: /
+
+User-agent: Net Vampire
+Disallow: /
+
+User-agent: NetZIP
+Disallow: /
+
+User-agent: Octopus
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: Offline Navigator
+Disallow: /
+
+User-agent: PageGrabber
+Disallow: /
+
+User-agent: Papa Foto
+Disallow: /
+
+User-agent: pavuk
+Disallow: /
+
+User-agent: pcBrowser
+Disallow: /
+
+User-agent: RealDownload
+Disallow: /
+
+User-agent: ReGet
+Disallow: /
+
+User-agent: SiteSnagger
+Disallow: /
+
+User-agent: SmartDownload
+Disallow: /
+
+User-agent: SuperBot
+Disallow: /
+
+User-agent: SuperHTTP
+Disallow: /
+
+User-agent: Surfbot
+Disallow: /
+
+User-agent: tAkeOut
+Disallow: /
+
+User-agent: Teleport Pro
+Disallow: /
+
+User-agent: VoidEYE
+Disallow: /
+
+User-agent: Web Image Collector
+Disallow: /
+
+User-agent: Web Sucker
+Disallow: /
+
+User-agent: WebAuto
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebFetch
+Disallow: /
+
+User-agent: WebGo IS
+Disallow: /
+
+User-agent: WebLeacher
+Disallow: /
+
+User-agent: WebReaper
+Disallow: /
+
+User-agent: WebSauger
+Disallow: /
+
+User-agent: Website eXtractor
+Disallow: /
+
+User-agent: Website Quester
+Disallow: /
+
+User-agent: WebStripper
+Disallow: /
+
+User-agent: WebWhacker
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: Widow
+Disallow: /
+
+User-agent: WWWOFFLE
+Disallow: /
+
+User-agent: Xaldon WebSpider
+Disallow: /
+
+User-agent: Zeus
+Disallow: /
+
+# ================================================
+# ССЫЛКИ НА КАРТЫ САЙТА
+# ================================================
+
+Sitemap: https://absudia.com/sitemap.xml
+Sitemap: https://absudia.com/sitemap-images.xml
+
+# ================================================
+# ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+# ================================================
+
+# Время краулинга по умолчанию (в секундах)
+# Применяется к ботам без явно указанного Crawl-delay
+Crawl-delay: 1
+
+# Указание на политику конфиденциальности
+# (не стандарт robots.txt, но некоторые боты читают)
+# Privacy-Policy: https://absudia.com/privacy.html
+
+# ================================================
+# КОММЕНТАРИИ ДЛЯ РАЗРАБОТЧИКОВ
+# ================================================
+
+# Этот файл robots.txt оптимизирован для:
+# 1. Максимального индексирования полезного контента
+# 2. Защиты от агрессивных краулеров
+# 3. Оптимизации нагрузки на сервер
+# 4. Соответствия лучшим практикам SEO
+# 
+# Регулярно проверяйте:
+# - Google Search Console -> Покрытие -> robots.txt
+# - Bing Webmaster Tools -> Сканирование -> robots.txt
+# - Online robots.txt тестеры
+#
+# Не забывайте обновлять Sitemap после изменений!
+
+# Контакт для связи по поводу краулинга:
+# Email: seo@absudia.com
+# URL: https://absudia.com/contact.html
