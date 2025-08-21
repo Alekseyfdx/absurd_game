@@ -1,35 +1,130 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Абсурдная Игра</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Абсурдная Игра - Генератор Безумных Фраз</title>
+    <meta name="description" content="Погрузись в мир абсурда! Генератор случайных фраз для веселья с друзьями.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
 </head>
 <body>
+    <div class="particles"></div>
+    
+    <!-- Звуковые эффекты -->
+    <audio id="clickSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCEuF2+/BdisOSIXY7r9zKg1IhNvywHL" type="audio/wav">
+    </audio>
 
-  <div class="container">
-    <h1 class="neon">Абсурдная Игра</h1>
-    <div class="genres" id="genre-buttons"></div>
-    <div class="phrase-box" id="phrase-box">
-      Выберите жанр, чтобы начать
-    </div>
-    <button class="new-phrase-btn" id="next-btn" style="display: none;">
-      Следующая фраза
-    </button>
-  </div>
+    <div class="floating-element" style="top: 10%; left: 10%; font-size: 3rem;">🎭</div>
+    <div class="floating-element" style="top: 20%; right: 15%; font-size: 2rem;">🎪</div>
+    <div class="floating-element" style="bottom: 30%; left: 20%; font-size: 2.5rem;">🎨</div>
+    <div class="floating-element" style="bottom: 10%; right: 10%; font-size: 3rem;">✨</div>
+    <div class="floating-element" style="top: 50%; left: 5%; font-size: 2rem;">🌀</div>
+    <div class="floating-element" style="top: 60%; right: 5%; font-size: 2.5rem;">🎲</div>
 
-  <footer>
-    <div class="footer-links">
-      <a href="privacy.html">Политика конфиденциальности</a> |
-      <a href="terms.html">Условия использования</a> |
-      <a href="contact.html">Контакты</a>
-    </div>
-    <div class="copyright">
-      © 2025 Absudia
-    </div>
-  </footer>
+    <div class="container">
+        <!-- Счетчик фраз -->
+        <div class="stats-panel">
+            <div class="stat-item">
+                <span class="stat-number" id="totalPhrases">0</span>
+                <span class="stat-label">Фраз показано</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="currentStreak">0</span>
+                <span class="stat-label">Подряд</span>
+            </div>
+        </div>
 
-  <script src="js/app.js" defer></script>
+        <h1 class="main-title">
+            <span class="title-word">Абсурдная</span>
+            <span class="title-word">Игра</span>
+        </h1>
+        
+        <div class="categories-container">
+            <button class="category-btn absurd active" data-category="absurd">
+                <span class="btn-icon">🤪</span>
+                <span class="btn-text">Абсурд</span>
+            </button>
+            <button class="category-btn horror" data-category="horror">
+                <span class="btn-icon">👻</span>
+                <span class="btn-text">Ужасы</span>
+            </button>
+            <button class="category-btn kids" data-category="kids">
+                <span class="btn-icon">🧸</span>
+                <span class="btn-text">Детское</span>
+            </button>
+            <button class="category-btn romance" data-category="romance">
+                <span class="btn-icon">💕</span>
+                <span class="btn-text">Романтика</span>
+            </button>
+            <button class="category-btn adult" data-category="adult">
+                <span class="btn-icon">🔞</span>
+                <span class="btn-text">18+</span>
+            </button>
+            <button class="category-btn street" data-category="street">
+                <span class="btn-icon">🏙️</span>
+                <span class="btn-text">Улица</span>
+            </button>
+        </div>
+        
+        <div class="phrase-container" id="phraseContainer">
+            <div class="phrase-header">
+                <div class="phrase-number">Фраза #<span id="phraseNumber">1</span></div>
+                <button class="favorite-btn" id="favoriteBtn" title="Добавить в избранное">
+                    <span class="heart">🤍</span>
+                </button>
+            </div>
+            
+            <div class="phrase-text" id="phraseText">
+                Добро пожаловать в мир абсурда! 🎭<br>
+                Выберите категорию и нажмите кнопку для получения случайной фразы!
+            </div>
+            
+            <div class="control-buttons">
+                <button class="control-btn share-btn" id="shareBtn" title="Поделиться">
+                    📤
+                </button>
+                <button class="next-btn" id="nextBtn">
+                    <span class="btn-text">Следующая фраза</span>
+                    <span class="btn-icon">🎲</span>
+                </button>
+                <button class="control-btn copy-btn" id="copyBtn" title="Копировать">
+                    📋
+                </button>
+            </div>
+        </div>
+
+        <!-- Панель избранного -->
+        <div class="favorites-panel" id="favoritesPanel">
+            <div class="favorites-header">
+                <h3>Избранные фразы</h3>
+                <button class="close-favorites" id="closeFavorites">✕</button>
+            </div>
+            <div class="favorites-list" id="favoritesList">
+                <div class="empty-favorites">Пока нет избранных фраз</div>
+            </div>
+        </div>
+
+        <!-- Кнопка избранного -->
+        <button class="show-favorites-btn" id="showFavoritesBtn">
+            <span class="fav-count" id="favCount">0</span>
+            ❤️
+        </button>
+    </div>
+    
+    <div class="footer">
+        <a href="#" id="privacy">Политика конфиденциальности</a>
+        <a href="#" id="terms">Условия использования</a>
+        <a href="#" id="contact">Контакты</a>
+    </div>
+
+    <!-- Toast уведомления -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
