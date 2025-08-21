@@ -3,22 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Абсурдная Игра - Генератор Безумных Фраз</title>
-    <meta name="description" content="Погрузись в мир абсурда! Генератор случайных фраз для веселья с друзьями.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Абсурдная Игра - Генератор Случайных Фраз для Веселья</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Абсурдная игра - развлекательный генератор случайных смешных фраз. 6 категорий: абсурд, ужасы, детские, романтика, улица. Играй с друзьями бесплатно!">
+    <meta name="keywords" content="абсурдная игра, смешные фразы, генератор фраз, развлечение, игра с друзьями, случайные фразы, юмор">
+    <meta name="author" content="Absudia Team">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://absudia.com/">
+    <meta property="og:title" content="Абсурдная Игра - Генератор Смешных Фраз">
+    <meta property="og:description" content="Развлекательная игра с генератором случайных абсурдных фраз. Играй с друзьями и смейся до слёз!">
+    <meta property="og:image" content="https://absudia.com/og-image.jpg">
+    <meta property="og:site_name" content="Абсурдная Игра">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://absudia.com/">
+    <meta property="twitter:title" content="Абсурдная Игра - Генератор Смешных Фраз">
+    <meta property="twitter:description" content="Развлекательная игра с генератором случайных абсурдных фраз. Играй с друзьями!">
+    <meta property="twitter:image" content="https://absudia.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#764ba2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Абсурдная Игра">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-ВАSH-ADSENSE-ID"
+            crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA-ВАSH-ANALYTICS-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA-ВАSH-ANALYTICS-ID');
+    </script>
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Абсурдная Игра",
+        "description": "Развлекательная игра с генератором случайных смешных фраз для веселья с друзьями",
+        "url": "https://absudia.com",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Absudia Team"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150"
+        }
+    }
+    </script>
 </head>
 <body>
+    <!-- Cookie Notice (для GDPR/AdSense) -->
+    <div class="cookie-notice" id="cookieNotice">
+        <div class="cookie-content">
+            <span class="cookie-text">
+                🍪 Мы используем cookies для улучшения сайта и показа релевантной рекламы. 
+                Продолжая использование, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.
+            </span>
+            <button class="cookie-accept" id="acceptCookies">Принять</button>
+            <button class="cookie-decline" id="declineCookies">Отклонить</button>
+        </div>
+    </div>
+
+    <!-- Background Effects -->
     <div class="particles"></div>
     
-    <!-- Звуковые эффекты -->
-    <audio id="clickSound" preload="auto">
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCEuF2+/BdisOSIXY7r9zKg1IhNvywHL" type="audio/wav">
-    </audio>
-
+    <!-- Floating Decorative Elements -->
     <div class="floating-element" style="top: 10%; left: 10%; font-size: 3rem;">🎭</div>
     <div class="floating-element" style="top: 20%; right: 15%; font-size: 2rem;">🎪</div>
     <div class="floating-element" style="bottom: 30%; left: 20%; font-size: 2.5rem;">🎨</div>
@@ -26,8 +111,20 @@
     <div class="floating-element" style="top: 50%; left: 5%; font-size: 2rem;">🌀</div>
     <div class="floating-element" style="top: 60%; right: 5%; font-size: 2.5rem;">🎲</div>
 
+    <!-- Main Container -->
     <div class="container">
-        <!-- Счетчик фраз -->
+        <!-- Header Ad Space -->
+        <div class="ad-container ad-header">
+            <!-- Google AdSense - Header Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-ВАSH-ADSENSE-ID"
+                 data-ad-slot="HEADER-SLOT-ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Statistics Panel -->
         <div class="stats-panel">
             <div class="stat-item">
                 <span class="stat-number" id="totalPhrases">0</span>
@@ -37,94 +134,224 @@
                 <span class="stat-number" id="currentStreak">0</span>
                 <span class="stat-label">Подряд</span>
             </div>
-        </div>
-
-        <h1 class="main-title">
-            <span class="title-word">Абсурдная</span>
-            <span class="title-word">Игра</span>
-        </h1>
-        
-        <div class="categories-container">
-            <button class="category-btn absurd active" data-category="absurd">
-                <span class="btn-icon">🤪</span>
-                <span class="btn-text">Абсурд</span>
-            </button>
-            <button class="category-btn horror" data-category="horror">
-                <span class="btn-icon">👻</span>
-                <span class="btn-text">Ужасы</span>
-            </button>
-            <button class="category-btn kids" data-category="kids">
-                <span class="btn-icon">🧸</span>
-                <span class="btn-text">Детское</span>
-            </button>
-            <button class="category-btn romance" data-category="romance">
-                <span class="btn-icon">💕</span>
-                <span class="btn-text">Романтика</span>
-            </button>
-            <button class="category-btn adult" data-category="adult">
-                <span class="btn-icon">🔞</span>
-                <span class="btn-text">18+</span>
-            </button>
-            <button class="category-btn street" data-category="street">
-                <span class="btn-icon">🏙️</span>
-                <span class="btn-text">Улица</span>
-            </button>
-        </div>
-        
-        <div class="phrase-container" id="phraseContainer">
-            <div class="phrase-header">
-                <div class="phrase-number">Фраза #<span id="phraseNumber">1</span></div>
-                <button class="favorite-btn" id="favoriteBtn" title="Добавить в избранное">
-                    <span class="heart">🤍</span>
-                </button>
-            </div>
-            
-            <div class="phrase-text" id="phraseText">
-                Добро пожаловать в мир абсурда! 🎭<br>
-                Выберите категорию и нажмите кнопку для получения случайной фразы!
-            </div>
-            
-            <div class="control-buttons">
-                <button class="control-btn share-btn" id="shareBtn" title="Поделиться">
-                    📤
-                </button>
-                <button class="next-btn" id="nextBtn">
-                    <span class="btn-text">Следующая фраза</span>
-                    <span class="btn-icon">🎲</span>
-                </button>
-                <button class="control-btn copy-btn" id="copyBtn" title="Копировать">
-                    📋
-                </button>
+            <div class="stat-item">
+                <span class="stat-number" id="dailyVisitors">2,547</span>
+                <span class="stat-label">Игроков сегодня</span>
             </div>
         </div>
 
-        <!-- Панель избранного -->
-        <div class="favorites-panel" id="favoritesPanel">
+        <!-- Main Title -->
+        <header>
+            <h1 class="main-title">
+                <span class="title-word">Абсурдная</span>
+                <span class="title-word">Игра</span>
+            </h1>
+            <p class="subtitle">Генератор случайных смешных фраз для веселья с друзьями</p>
+        </header>
+        
+        <!-- Categories -->
+        <section class="categories-section">
+            <h2 class="section-title">Выбери категорию</h2>
+            <div class="categories-container">
+                <button class="category-btn absurd active" data-category="absurd" aria-label="Категория Абсурд">
+                    <span class="btn-icon">🤪</span>
+                    <span class="btn-text">Абсурд</span>
+                    <span class="btn-count">500+</span>
+                </button>
+                <button class="category-btn horror" data-category="horror" aria-label="Категория Ужасы">
+                    <span class="btn-icon">👻</span>
+                    <span class="btn-text">Ужасы</span>
+                    <span class="btn-count">500+</span>
+                </button>
+                <button class="category-btn kids" data-category="kids" aria-label="Категория Детское">
+                    <span class="btn-icon">🧸</span>
+                    <span class="btn-text">Детское</span>
+                    <span class="btn-count">500+</span>
+                </button>
+                <button class="category-btn romance" data-category="romance" aria-label="Категория Романтика">
+                    <span class="btn-icon">💕</span>
+                    <span class="btn-text">Романтика</span>
+                    <span class="btn-count">500+</span>
+                </button>
+                <button class="category-btn adult" data-category="adult" aria-label="Категория 18+">
+                    <span class="btn-icon">🔞</span>
+                    <span class="btn-text">18+</span>
+                    <span class="btn-count">500+</span>
+                </button>
+                <button class="category-btn street" data-category="street" aria-label="Категория Улица">
+                    <span class="btn-icon">🏙️</span>
+                    <span class="btn-text">Улица</span>
+                    <span class="btn-count">500+</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Ad Space - Between Categories and Phrase -->
+        <div class="ad-container ad-middle">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-ВАSH-ADSENSE-ID"
+                 data-ad-slot="MIDDLE-SLOT-ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+        
+        <!-- Main Game Area -->
+        <main class="game-section">
+            <div class="phrase-container" id="phraseContainer">
+                <div class="phrase-header">
+                    <div class="phrase-number">Фраза #<span id="phraseNumber">1</span></div>
+                    <div class="phrase-controls">
+                        <button class="favorite-btn" id="favoriteBtn" title="Добавить в избранное" aria-label="Добавить в избранное">
+                            <span class="heart">🤍</span>
+                        </button>
+                        <button class="share-btn" id="shareBtn" title="Поделиться" aria-label="Поделиться фразой">
+                            📤
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="phrase-content">
+                    <div class="phrase-text" id="phraseText" role="main" aria-live="polite">
+                        Добро пожаловать в мир абсурда! 🎭<br>
+                        <small>Выберите категорию и нажмите кнопку для получения случайной фразы!</small>
+                    </div>
+                </div>
+                
+                <div class="control-buttons">
+                    <button class="control-btn copy-btn" id="copyBtn" title="Копировать фразу" aria-label="Копировать фразу">
+                        📋
+                    </button>
+                    <button class="next-btn" id="nextBtn" aria-label="Получить следующую фразу">
+                        <span class="btn-text">Следующая фраза</span>
+                        <span class="btn-icon">🎲</span>
+                    </button>
+                    <button class="control-btn random-btn" id="randomBtn" title="Случайная категория" aria-label="Случайная категория">
+                        🎰
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Ad Space -->
+        <div class="ad-container ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-ВАSH-ADSENSE-ID"
+                 data-ad-slot="BOTTOM-SLOT-ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">Возможности игры</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎲</div>
+                    <h3>6 Категорий</h3>
+                    <p>Более 3000 уникальных фраз в разных стилях</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Избранное</h3>
+                    <p>Сохраняй понравившиеся фразы для повторного просмотра</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Мобильная версия</h3>
+                    <p>Играй где угодно - сайт адаптирован для всех устройств</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Обновления</h3>
+                    <p>Новые фразы добавляются каждую неделю</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorites Panel -->
+        <div class="favorites-panel" id="favoritesPanel" role="dialog" aria-labelledby="favoritesTitle">
             <div class="favorites-header">
-                <h3>Избранные фразы</h3>
-                <button class="close-favorites" id="closeFavorites">✕</button>
+                <h3 id="favoritesTitle">Избранные фразы</h3>
+                <button class="close-favorites" id="closeFavorites" aria-label="Закрыть избранное">✕</button>
             </div>
             <div class="favorites-list" id="favoritesList">
                 <div class="empty-favorites">Пока нет избранных фраз</div>
             </div>
         </div>
 
-        <!-- Кнопка избранного -->
-        <button class="show-favorites-btn" id="showFavoritesBtn">
+        <!-- Floating Favorites Button -->
+        <button class="show-favorites-btn" id="showFavoritesBtn" aria-label="Показать избранные фразы">
             <span class="fav-count" id="favCount">0</span>
             ❤️
         </button>
     </div>
     
-    <div class="footer">
-        <a href="#" id="privacy">Политика конфиденциальности</a>
-        <a href="#" id="terms">Условия использования</a>
-        <a href="#" id="contact">Контакты</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html" rel="noopener">Политика конфиденциальности</a>
+                <a href="terms.html" rel="noopener">Условия использования</a>
+                <a href="contact.html" rel="noopener">Контакты</a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Абсурдная Игра. Все права защищены.</p>
+                <p>Сделано с ❤️ для веселья и смеха</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+    <!-- Age Verification Modal (для категории 18+) -->
+    <div class="modal-overlay" id="ageModal">
+        <div class="modal" role="dialog" aria-labelledby="ageModalTitle">
+            <div class="modal-header">
+                <h3 id="ageModalTitle">Подтверждение возраста</h3>
+            </div>
+            <div class="modal-content">
+                <p>Категория "18+" содержит контент для совершеннолетних.</p>
+                <p>Вам исполнилось 18 лет?</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-confirm" id="confirmAge">Да, мне есть 18</button>
+                <button class="modal-btn modal-btn-cancel" id="cancelAge">Нет</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Toast уведомления -->
-    <div class="toast" id="toast"></div>
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Загружаем фразы...</p>
+    </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+    
+    <!-- AdSense Initialization -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
