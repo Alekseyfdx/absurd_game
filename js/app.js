@@ -1,62 +1,48 @@
-"use strict";
+document.addEventListener("DOMContentLoaded", () => {
+  const genreContainer = document.getElementById("genre-buttons");
+  const phraseBox = document.getElementById("phrase-box");
+  const nextBtn = document.getElementById("next-btn");
 
-const genres = {
-  absurd: "Абсурд",
-  horror: "Ужасы",
-  kids: "Детское",
-  romance: "Романтика",
-  sex: "18+",
-  street: "Улица"
-};
+  let phrases = {};
+  let currentGenre = null;
+  let currentIndex = 0;
 
-const genreButtonsDiv = document.getElementById("genre-buttons");
-const phraseBox = document.getElementById("phrase-box");
-const nextBtn = document.getElementById("next-btn");
+  fetch("data/phrases.json")
+    .then(res => res.json())
+    .then(data => {
+      phrases = data;
+      createGenreButtons();
+    })
+    .catch(err => {
+      console.error("Ошибка загрузки JSON:", err);
+      phraseBox.textContent = "Не удалось загрузить фразы.";
+    });
 
-let phrases = [];
-let currentIndex = 0;
-
-Object.entries(genres).forEach(([key, label]) => {
-  const btn = document.createElement("button");
-  btn.textContent = label;
-  btn.className = "genre-btn";
-  btn.addEventListener("click", () => loadGenre(key));
-  genreButtonsDiv.appendChild(btn);
-});
-
-function setActiveGenreButton(key) {
-  document.querySelectorAll(".genre-btn").forEach(b => {
-    b.classList.toggle("active", b.textContent.trim() === genres[key]);
-  });
-}
-
-function revealPhrase(text) {
-  phraseBox.innerHTML = `<span class="typewriter"><span class="typewriter-text">${text}</span></span>`;
-  phraseBox.classList.remove("reveal");
-  void phraseBox.offsetWidth;
-  phraseBox.classList.add("reveal");
-  if (navigator.vibrate) navigator.vibrate(10);
-}
-
-async function loadGenre(genreKey) {
-  try {
-    setActiveGenreButton(genreKey);
-    const res = await fetch(`data/${genreKey}.json`, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    if (!Array.isArray(data)) throw new Error("Неверный формат JSON");
-    phrases = data;
-    currentIndex = 0;
-    revealPhrase(phrases[currentIndex]);
-    nextBtn.style.display = "inline-block";
-  } catch (err) {
-    phraseBox.textContent = `Ошибка: ${err.message}`;
-    console.error("Fetch error:", err);
+  function createGenreButtons() {
+    for (const genre in phrases) {
+      const btn = document.createElement("button");
+      btn.textContent = genre;
+      btn.className = "genre-btn";
+      btn.addEventListener("click", () => selectGenre(genre, btn));
+      genreContainer.appendChild(btn);
+    }
   }
-}
 
-nextBtn.addEventListener("click", () => {
-  if (!phrases.length) return;
-  currentIndex = (currentIndex + 1) % phrases.length;
-  revealPhrase(phrases[currentIndex]);
+  function selectGenre(genre, btn) {
+    currentGenre = genre;
+    currentIndex = 0;
+    document.querySelectorAll(".genre-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    showPhrase();
+    nextBtn.style.display = "inline-block";
+  }
+
+  nextBtn.addEventListener("click", showPhrase);
+
+  function showPhrase() {
+    const arr = phrases[currentGenre];
+    if (!arr) return;
+    phraseBox.textContent = arr[currentIndex];
+    currentIndex = (currentIndex + 1) % arr.length;
+  }
 });
