@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>О проекте | YuGame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PWA / иконка -->
+  <link rel="icon" href="/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* ---- page-local tweaks ---- */
+    main{max-width:860px;margin:4.5rem auto 3.2rem;padding:0 1rem}
+    h1{font-size:2.4rem;margin-bottom:1.3rem;text-align:center;
+        background:linear-gradient(45deg,var(--accent-grad));
+        -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    h2{font-size:1.4rem;margin:2.2rem 0 .9rem}
+    p{font-size:.97rem;opacity:.9;margin:.7rem 0 1rem;line-height:1.6}
+    .hero{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .hero img{width:140px;height:140px;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+    .badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0}
+    .badges img{height:24px}
+    .donate{display:inline-block;margin:1.4rem 0;background:var(--accent);color:#fff;
+            padding:.9rem 2.2rem;border-radius:9999px;font-weight:600;transition:.25s}
+    .donate:hover{transform:translateY(-3px) scale(1.05)}
+    .timeline{border-left:3px solid var(--accent);margin:1.4rem 0;padding-left:1.15rem}
+    .timeline li{margin-bottom:1rem;position:relative}
+    .timeline li::before{content:'';position:absolute;left:-10px;top:6px;
+                         width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .alt-links{text-align:center;margin-top:2rem}
+    .alt-links a{color:var(--accent);font-weight:600}
+    /* scroll-to-top */
+    #up{position:fixed;right:1.2rem;bottom:1.4rem;background:var(--accent);
+        width:46px;height:46px;border-radius:50%;display:flex;align-items:center;
+        justify-content:center;font-size:1.35rem;color:#fff;cursor:pointer;
+        box-shadow:0 10px 25px rgba(102,126,234,.35);transition:.25s}
+    #up:hover{transform:translateY(-4px)}
+    #up.hide{opacity:0;pointer-events:none;transform:scale(.6)}
+  </style>
+</head>
+<body>
+
+<main>
+  <!-- hero -->
+  <section class="hero">
+    <img src="/icon-512.png" alt="Логотип YuGame">
+    <h1>YuGame: абсурд, кофе и&nbsp;немного PWA-магии</h1>
+
+    <div class="badges">
+      <img src="https://img.shields.io/github/stars/absudia/yugame?style=flat-square&label=GitHub&color=667eea" alt="GitHub stars">
+      <img src="https://img.shields.io/badge/PWA-ready-brightgreen?style=flat-square" alt="PWA ready">
+      <img src="https://img.shields.io/badge/phrases-3000%2B-orange?style=flat-square" alt="3000+ фраз">
+    </div>
+  </section>
+
+  <!-- about me -->
+  <h2>Кто всё это придумал?</h2>
+  <p>Привет! Я <strong>Алексей Коломиец</strong> — фронтенд-энтузиаст из Тель-Авива.<br>
+     Люблю неон, кофе и странные пет-проекты. YuGame писал между двумя&nbsp;глотками капучино
+     и одним&nbsp;ревом&nbsp;пылесоса-робота.</p>
+
+  <!-- AI assistant -->
+  <h2>Знакомьтесь, Юла — наш AI-напарник</h2>
+  <p>Юла — «absurd-GPT» внизу экрана. Она отвечает на любые вопросы
+     <em>только абсурдно</em> и максимум 25&nbsp;словами. Под капотом — Gemini API,
+     но Юла уверена, что родилась из банановой кожуры и CSS-гридов.</p>
+
+  <!-- timeline -->
+  <h2>Как всё начиналось</h2>
+  <ul class="timeline">
+    <li><strong>03 марта 2025</strong> — идея: «А давайте сделаем игру без смысла!».<br>Смысл действительно сбежал.</li>
+    <li><strong>07 марта 2025</strong> — первые 100 фраз «absurd» в Google Docs, море слёз смеха.</li>
+    <li><strong>12 марта 2025</strong> — PWA-обёртка, офлайн-режим; шутки остаются онлайн.</li>
+    <li><strong>20 апреля 2025</strong> — добавлен вход Google OAuth, чтобы видеть ваши аватары и ревновать.</li>
+    <li><strong>май 2025</strong> — 10 жанров, 3000+ фраз, AI-чат, релиз на
+        <a href="https://absudia.com" target="_blank">absudia.com</a>.</li>
+  </ul>
+
+  <!-- coffee -->
+  <h2>Почему «Buy me a coffee»?</h2>
+  <p>Кофе ☕ — топливо, на котором ездят абсурдные идеи. Если YuGame подарил улыбку —
+     поддержите чашкой, и она превратится в новые фразы и фичи.</p>
+  <a class="donate" href="https://buymeacoffee.com/absudia" target="_blank">Buy me a coffee</a>
+
+  <!-- roadmap -->
+  <h2>Roadmap</h2>
+  <ul>
+    <li>🌐 Локализация EN / ES (i18n-поля готовы).</li>
+    <li>📱 Android APK + пуш-уведомления «Фраза дня».</li>
+    <li>🎮 Battle-mode — угадай жанр быстрее друзей.</li>
+    <li>🧩 Генератор пользовательских наборов фраз.</li>
+  </ul>
+
+  <!-- links -->
+  <div class="alt-links">
+    Пишите в&nbsp;Telegram:&nbsp;
+    <a href="https://t.me/Alekseyfdx" target="_blank">@Alekseyfdx</a>
+  </div>
+
+  <p style="margin-top:2.5rem;font-size:.85rem;opacity:.6">
+    © 2025&nbsp;Алексей К. · Версия v1.0
+  </p>
+</main>
+
+<!-- scroll-up btn -->
+<button id="up" class="hide" aria-label="Наверх">↑</button>
+
+<script>
+  /* плавный скролл-ап */
+  const up=document.getElementById('up');
+  window.addEventListener('scroll',()=>{
+    up.classList.toggle('hide',scrollY<350);
+  });
+  up.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>

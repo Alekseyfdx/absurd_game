@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>404 — всё сломалось! | YuGame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body{display:flex;flex-direction:column;align-items:center;justify-content:center;
+         text-align:center;height:100vh;padding:1.5rem;background:var(--bg);color:var(--fg)}
+    h1{font-size:clamp(2.5rem,8vw,5rem);margin-bottom:.5rem;
+        background:linear-gradient(45deg,var(--accent-grad));
+        -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    p{font-size:1.1rem;opacity:.8;margin:.3rem 0 .8rem}
+    .btn{display:inline-block;margin-top:1rem;background:var(--accent);color:#fff;
+         padding:.9rem 2.2rem;border-radius:9999px;font-weight:600;
+         transition:.25s;box-shadow:0 10px 24px rgba(102,126,234,.35)}
+    .btn:hover{transform:translateY(-3px) scale(1.05)}
+    .emoji{font-size:4rem;margin-bottom:.6rem;animation:bob 3s ease-in-out infinite}
+    @keyframes bob{50%{transform:translateY(-8px)}}
+  </style>
+</head>
+<body>
+  <div class="emoji">🤯</div>
+  <h1>404 — ой-ой, абсурд исчез!</h1>
+  <p>Похоже, вы упали в пустоту вселенной.<br>
+     Давайте вернёмся к абсурду, пока он не сбежал совсем.</p>
+  <a href="/" class="btn">Назад к игре</a>
+</body>
+</html>
